@@ -5,6 +5,7 @@ import org.springframework.beans
         .factory.annotation.Autowired;
 import org.springframework.http
         .ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind
         .annotation.GetMapping;
 import org.springframework.web.bind
@@ -25,8 +26,9 @@ import com.example.demo.Exercise;
 @RestController
 @RequestMapping(path = "/exerciseList")
 
+@Controller
 public class ExerciseController {
-//    @Autowired
+    @Autowired
     private ExerciseDatabase exerciseDatabase;
 
     @GetMapping(
@@ -45,13 +47,9 @@ public class ExerciseController {
 
     public ResponseEntity<Object> addExercise(@RequestBody Exercise exercise) {
         Integer id = exerciseDatabase.getAllExercises().getExerciseList().size() + 1;
-
         exercise.setId(id);
-
         exerciseDatabase.addExercise(exercise);
-
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(exercise.getId()).toUri();
-
         return ResponseEntity.created(location).build();
     }
 }

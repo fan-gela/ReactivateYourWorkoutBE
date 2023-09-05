@@ -1,10 +1,12 @@
 package com.example.demo;
+import org.springframework.stereotype.Component;
 import org.springframework
         .stereotype
         .Repository;
 
 import com.example.demo.ExerciseList;
 
+@Component
 public class ExerciseDatabase {
     private static ExerciseList allExercises = new ExerciseList();
 
