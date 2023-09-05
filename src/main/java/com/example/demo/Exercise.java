@@ -1,32 +1,25 @@
 package com.example.demo;
 
 public class Exercise {
-    public Exercise() {}
-
-    public Exercise(
-            Integer id, String exerciseName,String exerciseInstructions)
-    {
-        super();
-        this.id = id;
-        this.exerciseName = exerciseName;
-        this.exerciseInstructions = exerciseInstructions;
-    }
 
     private Integer id;
     private String exerciseName;
     private String exerciseInstructions;
 
-//    @Override
-    public String toString()
-    {
-        return "Exercise [id=" + id + " , exerciseName=" + exerciseName + " , exerciseInstructions=" + exerciseInstructions + "]";
+
+    // constructor
+    public Exercise(Integer id, String exerciseName, String exerciseInstructions) {
+        this.id = id;
+        this.exerciseName = exerciseName;
+        this.exerciseInstructions = exerciseInstructions;
     }
 
+    // getters and setters
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer Id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,6 +39,8 @@ public class Exercise {
         this.exerciseInstructions = exerciseInstructions;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Exercise [id=" + id + ", exerciseName=" + exerciseName + ", exerciseInstructions=" + exerciseInstructions + "]";
+    }
 }

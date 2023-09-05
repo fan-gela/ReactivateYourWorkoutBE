@@ -10,14 +10,10 @@ public class ExerciseList {
         if (exerciseList == null) {
             exerciseList = new ArrayList<>();
         }
-
         return exerciseList;
     }
 
-    public void setExerciseList(
-            List<Exercise> exerciseList
-    )
-    {
+    public void setExerciseList(List<Exercise> exerciseList) {
         this.exerciseList = exerciseList;
     }
 }

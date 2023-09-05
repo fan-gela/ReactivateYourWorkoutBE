@@ -1,16 +1,16 @@
 package com.example.demo;
-import org.springframework.stereotype.Component;
-import org.springframework
-        .stereotype
-        .Repository;
 
-import com.example.demo.ExerciseList;
+import jakarta.annotation.PostConstruct;
+import org.springframework.stereotype.Component;
 
 @Component
 public class ExerciseDatabase {
-    private static ExerciseList allExercises = new ExerciseList();
+    private ExerciseList allExercises;
 
-    static {
+    @PostConstruct
+    public void init() {
+        allExercises = new ExerciseList();
+
         allExercises.getExerciseList().add(
                 new Exercise(
                         1,
@@ -41,5 +41,4 @@ public class ExerciseDatabase {
     public void addExercise(Exercise exercise) {
         allExercises.getExerciseList().add(exercise);
     }
-
 }
