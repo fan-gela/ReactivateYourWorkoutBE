@@ -2,12 +2,10 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@RestController
+@ComponentScan(basePackages = {"com.example.demo.WorkoutDao"})
 public class ExercisesApplication {
 
 	public static void main(String[] args) {
