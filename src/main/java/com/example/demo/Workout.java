@@ -1,30 +1,16 @@
 package com.example.demo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "Workout")
+@Table(name = "workouts")
 public class Workout {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="completed")
+    @Column(name = "completed")
     private boolean completed;
-
-    public Workout() {
-
-    }
-    public Workout(Long id, boolean completed) {
-        this.id = id;
-        this.completed = completed;
-    }
 
     public Long getId() {
         return id;
@@ -41,6 +27,4 @@ public class Workout {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-
-
 }
